@@ -1,0 +1,87 @@
+<div class="container-fluid">
+<br><br><br><br>
+<div class="row">
+    <div class="col-xxs-12 col-xs-6 col-sm-6 col-sm-3 col-md-3" ng-repeat="(key, item) in itemList.items">
+        <div class="thumbnail">
+           <a href="#productInformation/{{ key}}" ng-click="menItemClickFunction()" style="text-decoration:none;">
+               <img src="/images/men/{{item.imgurl}}" style="width:100%">
+               <div class="caption">
+                   <div class="product-info">
+                       <span class="offer">{{ item.offer }}</span>
+                       <div class="h4">{{ item.title }} <span>{{ item.desc }}</span></div>
+                       <div class="price">
+                           <span class="prev-price">Rs.&nbsp;{{ item.op }}</span>
+                           <span class="standard-price">Rs.&nbsp;{{ item.up }}</span>
+                           <span class="discount">(-{{ item.disc }}%)</span>
+                        </div>
+                         <div class="size">
+                            <div class="avail-size">
+                            <span class="size-label">Sizes</span>
+                            <span ng-repeat="s in item.size">{{ s }}</span>
+                         </div>
+             </div>
+                   </div>
+               </div>
+           </a>
+        </div>
+    </div>
+</div><!-- 
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-sm-3 col-md-3">
+      <div class="thumbnail">
+        <a href="/images/men/{{ itemList.items.sku1.imgurl}}" target="_blank" style="text-decoration: none;">
+          <img src="/images/men/{{ itemList.items.sku1.imgurl}}" alt="Lights" style="width:100%">
+          <div class="caption">
+             <div class="product-info">
+               <span class="offer">New</span>
+             <div class="h4">John Players <span>Grey Checked Casual Shirt</span></div>
+             <div class="price">
+                <span class="prev-price">Rs.&nbsp;1699</span>
+                <span class="standard-price">Rs.&nbsp;850</span>
+                <span class="discount">(-50%)</span>
+              </div>
+              <div class="size">
+              <div class="avail-size">
+                 <span class="size-label">Sizes</span>
+                 <span ng-repeat="x in itemList.items.sku1.size">{{x}}</span>
+              </div>
+             </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-sm-3 col-md-3">
+      <div class="thumbnail">
+        <a href="/images/men/{{ itemList.items.sku2.imgurl}}" target="_blank">
+          <img src="/images/men/{{ itemList.items.sku2.imgurl}}" alt="Nature" style="width:100%">
+          <div class="caption">
+            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-sm-3 col-md-3">
+      <div class="thumbnail">
+        <a href="/images/men/{{ itemList.items.sku3.imgurl}}" target="_blank">
+          <img src="/images/men/{{ itemList.items.sku3.imgurl}}" alt="Fjords" style="width:100%">
+          <div class="caption">
+            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-sm-3 col-md-3">
+      <div class="thumbnail">
+        <a href="/images/men/{{ itemList.items.sku4.imgurl}}" target="_blank">
+          <img src="/images/men/{{ itemList.items.sku4.imgurl}}" alt="Fjords" style="width:100%">
+          <div class="caption">
+            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  -->
+</div>
+

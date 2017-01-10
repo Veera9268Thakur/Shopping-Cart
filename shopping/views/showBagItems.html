@@ -1,0 +1,111 @@
+<br>
+<br>
+<br>
+<!-- <div>{{ bagItems }}</div> -->
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-9 col-md-9 col-sm-12">
+			<div class="row heading-wrraper">
+				<div class="col-md-12 col-sm-12 col-xs-12 col-xs-12 text-center"
+					style="font-size: 24px;">
+					<b>YOUR SHOPPING BAG</b> <span class="cart-items">[ {{
+						itemsLength }}&nbsp;&nbsp;items ] </span>
+				</div>
+			</div>
+			<div class="product-heading row text-uppercase hidden-xs"
+				style="font-weight: bold">
+				<hr />
+				<span class="col-md-5 col-sm-5">Products</span> 
+				<span class="col-md-3 col-sm-3 delivery-txt visible-lg-screen text-center">Delivery&nbsp; by</span> 
+				<span class="col-md-4 col-sm-4 text-center">total&nbsp;Amount</span>
+
+			</div>
+			<div class="row" ng-repeat="(key, item) in bagItems.items">
+				<hr />
+				<div class="col-md-5 col-sm-5">
+					<div class="media">
+						<div class="media-left media-middle">
+							<img src="/images/men/{{ item.imgurl}}" class="media-object"
+								style="width: 100px">
+						</div>
+						<div class="media-body">
+							<h4 class="media-heading"></h4>
+							<div class="caption product-info">
+								<div class="h4">
+									{{ item.title }} <br> <span>{{ item.desc }}</span>
+								</div>
+								<span class="size"> 
+								    <span class="avail-size"> 
+								         <span class="size-label">Size</span> 
+								         <span>{{ item.size }}</span>
+								    </span>
+								 </span> 
+								 <span class="qty"> 
+								      <span class="avail-size"> 
+								        <span class="size-label">Qty</span> 
+								        <span>{{ item.qty }}</span>
+								      </span>
+								 </span>
+								 <button class="btn btn-warning btn-xs" type="button" ng-click="show = 1">Edit</button> 
+								  <span class="row">
+									<div class="form-group"  ng-show="show==1">
+										<label for="sel1">Select Quantity:</label> 
+										<select class="form-control" id="sel1" ng-model="qty" style="width:80px;">
+											<option  value="1">1</option>
+											<option  value="2" >2</option>
+											<option  value="3" >3</option>
+											<option  value="4" >4</option>
+										</select>
+										<br>
+										<button type="button" class="btn btn-danger btn-md" ng-click="saveNewUpdatedItem(key,qty)">SAVE</button>
+					                    <button type="button" class="btn btn-default btn-md" style="margin-left:4%;" ng-click="show=0">CANCEL</button>
+									</div>
+									<div class="col-xs -12 col-sm-12">
+									<br>
+										<button class="btn btn-default btn-xs" type="button" ng-click="removeItem(key)">
+										<i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;REMOVE</button>
+									</div>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-3 visible-lg-screen text-center">
+				<span class="visible-xs-inline pull-left "><b>Delivery By:</b></span>
+			    <span>{{ item.deltime }}</span>
+			    </div>
+				<div class="col-md-4 col-sm-4 text-center">
+					<div class="product-info">
+						<div class="price">
+							<span class="prev-price">Rs.&nbsp;{{ item.op }}</span> <span
+								class="standard-price">Rs.&nbsp;{{ item.up }}</span> <span
+								class="discount">(-{{ item.disc }}%)</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-12">
+			<br> <br> <br>
+			<div class="row total">
+				<br> <br>
+				<div class="col-xs-12 col-sm-12 text-center">
+					<h1>
+						<b>Total</b>
+						<hr style="border: 1px solid">
+					</h1>
+				</div>
+				<div class="col-xs-12 col-sm-12 text-center">
+					<h3>
+						<b>{{ total }}</b>
+					</h3>
+				</div>
+				<div class="col-xs-12 col-sm-12">
+					<br>
+					<button type="button" onclick="javascript:void(0)"
+						class="btn btn-warning btn-lg btn-block">PLACE ORDER</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

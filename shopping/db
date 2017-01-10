@@ -1,0 +1,54 @@
+create database jb;
+USE jb;
+CREATE TABLE things(
+	Id INT,
+	description VARCHAR(500),
+	image BLOB,
+	sizes VARCHAR(100),
+	TYPE CHAR,
+	category VARCHAR(10)
+);
+CREATE TABLE users(
+	Id INT,
+	NAME VARCHAR(30),
+	address VARCHAR(200),
+	gender VARCHAR(1),
+	mailId VARCHAR(50),
+	contact INT(10)
+);
+CREATE TABLE cartdata(
+	Id INT,
+	thingId INT REFERENCES things(Id),
+	quantity INT,
+	size INT,
+	userId INT REFERENCES users(Id)
+);
+
+create database jabong;
+use jabong;
+create table items(
+id int primary key auto_increment,
+imageurl text not null,
+title text not null,
+description text not null,
+stock int default 0,
+offer tinytext not null,
+size text not null,
+op double not null,
+up double not null,
+disc double not null
+);
+insert into jabong.items values(null,"image1.jpg","ADIDAS", "Aerok Grey Polo T-Shirts", 2,"NEW","39,40,42,25", 1699, 850,50);
+insert into jabong.items values(null,"image2.jpg","JOHN PLAYERS", "Grey Checked Casual Shirts", 5,"NEW","22,40,50,55", 1900, 1200,40);
+insert into jabong.items values(null,"image3.jpg","PUMA", "Blank India Black Sweatshirts", 5,"NEW","22,23,24,25", 2799, 1680,40);
+insert into jabong.items values(null,"image4.jpg","TOMMY HILFIGER", "Navy Blue Blue Polo T-Shirt", 5,"NEW","22,40,50,55", 1900, 1200,30);
+
+USE jabong;
+CREATE TABLE bagitems(
+id INT PRIMARY KEY AUTO_INCREMENT,
+itemid INT REFERENCES items(id),
+size INT NOT NULL,
+qty INT NOT NULL,
+sessionid TEXT NOT NULL,
+deltime TEXT NOT NULL
+);
